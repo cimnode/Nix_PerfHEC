@@ -8,7 +8,7 @@
       mode: '0700'
   - name: Copy script files
     copy:
-      src: "/home/matt/agentless/loadavg_metrics.sh"
+      src: "loadavg_metrics.sh"
       dest: "/root/scripts/loadavg_metrics.sh"
   - name: Set shell file to execute
     file:

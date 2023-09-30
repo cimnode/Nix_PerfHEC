@@ -1,3 +1,4 @@
+#!/bin/bash
 cpu_count=$(grep -c  ^processor  /proc/cpuinfo)
 mem_total_kb=$(cat /proc/meminfo | grep ^MemTotal | cut -d ":" -f 2 | xargs | cut -d " " -f 1)
 HOSTNAME=$(uname -n| xargs)

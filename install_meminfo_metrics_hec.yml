@@ -15,11 +15,11 @@
       state: present
   - name: Copy script files
     copy:
-      src: "/home/matt/agentless/meminfo_metrics.sh"
+      src: "meminfo_metrics.sh"
       dest: "/root/scripts/meminfo_metrics.sh"
   - name: Set shell file to execute
     file:
-      path: /root/scripts/meminfo_metrics.sh
+      path: meminfo_metrics.sh
       mode: "u+x"
   - name: Create crontab job
     cron:
