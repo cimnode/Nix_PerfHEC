@@ -9,5 +9,5 @@ do
 done
 
 curl -k "https://'${splunk_server_and_port}'/services/collector" \
-    -H "Authorization: Splunk c68d66cf-88f7-4a48-b37c-e7e4e4962823" \
-    -d '{"event":"metric","fields": {"metric_name:MemTotalkB":"'${MemTotal}'","metric_name:MemFreekB":"'${MemFree}'","metric_name:SwapFreekB":"'${SwapFree}'","metric_name:SwapTotalkB":"'${SwapTotal}'"},"index":"cimnet_metrics","host":"'${HOSTNAME}'", "sourcetype": "meminfo", "source":"/proc/meminfo","time":"'$(date +%s)'"}'
+    -H "Authorization: '${hec_token}'" \
+    -d '{"event":"metric","fields": {"metric_name:MemTotalkB":"'${MemTotal}'","metric_name:MemFreekB":"'${MemFree}'","metric_name:SwapFreekB":"'${SwapFree}'","metric_name:SwapTotalkB":"'${SwapTotal}'"},"index":"'${splunk_index}'","host":"'${HOSTNAME}'", "sourcetype": "meminfo", "source":"/proc/meminfo","time":"'$(date +%s)'"}'
