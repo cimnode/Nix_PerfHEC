@@ -1,0 +1,23 @@
+- hosts: 10.32.8.1
+  gather_facts: no
+  tasks:
+  - name: Verify scripts directory is present
+    file:
+      path: /root/scripts
+      state: directory
+      mode: '0700'
+  - name: Copy script files
+    copy:
+      src: "/home/matt/agentless/loadavg_metrics.sh"
+      dest: "/root/scripts/loadavg_metrics.sh"
+  - name: Set shell file to execute
+    file:
+      path: /root/scripts/loadavg_metrics.sh
+      mode: "u+x"
+  - name: Create crontab job
+    cron:
+      name: "loadavg_metrics"
+      minute: "*"
+      job: /root/scripts/loadavg_metrics.sh
+
+

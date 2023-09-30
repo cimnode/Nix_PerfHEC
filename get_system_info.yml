@@ -1,0 +1,8 @@
+- hosts: debian
+  gather_facts: no
+  become: yes
+  become_method: su
+  become_user: root
+  tasks:
+  - name: Run host info script
+    script: /home/cimnode/agentless/get_system_info.sh
