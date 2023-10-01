@@ -1,4 +1,5 @@
-- hosts: 10.32.8.1
+#WORK IN PROGRESS
+- hosts: X.X.X.X
   gather_facts: no
   tasks:
   - name: Verify scripts directory is present
