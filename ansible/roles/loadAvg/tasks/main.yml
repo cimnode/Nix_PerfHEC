@@ -19,7 +19,7 @@
 - name: Create crontab job
   cron:
     name: loadavg_metrics
-    minute: "*
+    minute: "*""
     job: /root/scripts/loadavg_metrics.sh > /dev/null
 
 
