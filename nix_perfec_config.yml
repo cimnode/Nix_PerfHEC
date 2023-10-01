@@ -1,0 +1,12 @@
+# Playbook to install
+# below should be your host group and any connection specifics. In this example 'hosts' group of debian is configured in /etc/ansible/hosts
+# group_vars/all.yml MUST BE SET FOR YOUR ENVIRONMENT
+- hosts: debian
+  gather_facts: no
+  become: yes
+  become_method: su
+  become_user: root
+  roles:
+    - systemInfo
+    - loadAvg
+    - memInfo
