@@ -5,7 +5,7 @@ Each shell script has variables that must be set specfic to your environment.
 splunk_server_and_port - The fqdn name and port of your HEC endpoint. Such as "your-server.domain.com:8088"  
 splunk_index - A normal index for collecting event data type.  
 metrics_index - An index for collecting performance metrics.  
-hec_token - A token to be used with HEC inputs.
+hec_token - A token to be used with HEC inputs, should have access to both indexes.
   
 get_system_info.sh - Collects very basic information on systems.  
 loadavg_metrics.sh - Collects the load average data from an endpoint.  
