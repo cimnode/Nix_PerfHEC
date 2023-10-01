@@ -1,25 +1,25 @@
-
-  - name: Verify scripts directory is present
-    file:
-      path: /root/scripts
-      state: directory
-      mode: '0700'
-  - name: Verify curl installed
-    package:
-      name: curl
-      state: present
-  - name: Copy script files
-    copy:
-      src: "loadavg_metrics.sh"
-      dest: "/root/scripts/loadavg_metrics.sh"
-  - name: Set shell file to execute
-    file:
-      path: loadavg_metrics.sh
-      mode: "u+x"
-  - name: Create crontab job
-    cron:
-      name: "loadavg_metrics"
-      minute: "*"
-      job: /root/scripts/loadavg_metrics.sh > /dev/null
+---
+- name: Verify scripts directory is present
+  file:
+    path: /root/scripts
+    state: directory
+    mode: '0700'
+- name: Verify curl installed
+  package:
+    name: curl
+    state: present
+- name: Copy script files
+  copy:
+    src: "loadavg_metrics.sh"
+    dest: "/root/scripts/loadavg_metrics.sh"
+- name: Set shell file to execute
+  file:
+    path: loadavg_metrics.sh
+    mode: "u+x"
+- name: Create crontab job
+  cron:
+    name: "loadavg_metrics"
+    minute: "*"
+    job: /root/scripts/loadavg_metrics.sh > /dev/null
 
 

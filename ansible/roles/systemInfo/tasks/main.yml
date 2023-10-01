@@ -1,3 +1,3 @@
-
-  - name: Run host info script
-    script: get_system_info.sh
+---
+- name: Run host info script
+  script: get_system_info.sh

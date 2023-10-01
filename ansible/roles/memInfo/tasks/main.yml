@@ -1,25 +1,23 @@
-
-  - name: Verify scripts directory is present
-    file:
-      path: /root/scripts
-      state: directory
-      mode: '0700'
-  - name: Verify curl installed
-    package:
-      name: curl
-      state: present
-  - name: Copy script files
-    copy:
-      src: "meminfo_metrics.sh"
-      dest: "/root/scripts/meminfo_metrics.sh"
-  - name: Set shell file to execute
-    file:
-      path: meminfo_metrics.sh
-      mode: "u+x"
-  - name: Create crontab job
-    cron:
-      name: "meminfo_metrics"
-      minute: "*"
-      job: /root/scripts/meminfo_metrics.sh > /dev/null
-
-
+---
+- name: Verify scripts directory is present
+  file:
+    path: /root/scripts
+    state: directory
+    mode: '0700'
+- name: Verify curl installed
+  package:
+    name: curl
+    state: present
+- name: Copy script files
+  copy:
+    src: "meminfo_metrics.sh"
+    dest: "/root/scripts/meminfo_metrics.sh"
+- name: Set shell file to execute
+  file:
+    path: meminfo_metrics.sh
+    mode: "u+x"
+- name: Create crontab job
+  cron:
+    name: "meminfo_metrics"
+    minute: "*"
+    job: /root/scripts/meminfo_metrics.sh > /dev/null
