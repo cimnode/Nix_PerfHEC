@@ -1,3 +1,16 @@
 ---
+- name: Verify scripts directory is present
+  file:
+    path: /root/scripts
+    state: directory
+    mode: '0700'
+- name: Copy script template files
+  template:
+    src: get_system_info.j2
+    dest: /root/scripts/get_system_info.sh
+- name: Set shell file to execute
+  file:
+    path: /root/scripts/get_system_info.sh
+    mode: u+x
 - name: Run host info script
-  script: get_system_info.sh
+  shell: /root/scripts/get_system_info.sh

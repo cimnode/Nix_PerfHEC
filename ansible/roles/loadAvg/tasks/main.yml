@@ -8,18 +8,18 @@
   package:
     name: curl
     state: present
-- name: Copy script files
-  copy:
-    src: "loadavg_metrics.sh"
-    dest: "/root/scripts/loadavg_metrics.sh"
+- name: Copy script template files
+  template:
+    src: loadavg_metrics.j2
+    dest: /root/scripts/loadavg_metrics.sh
 - name: Set shell file to execute
   file:
-    path: loadavg_metrics.sh
-    mode: "u+x"
+    path: /root/scripts/loadavg_metrics.sh
+    mode: u+x
 - name: Create crontab job
   cron:
-    name: "loadavg_metrics"
-    minute: "*"
+    name: loadavg_metrics
+    minute: *
     job: /root/scripts/loadavg_metrics.sh > /dev/null
 
 
