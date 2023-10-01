@@ -19,5 +19,5 @@
 - name: Create crontab job
   cron:
     name: meminfo_metrics
-    minute: "*""
+    minute: "*"
     job: /root/scripts/meminfo_metrics.sh > /dev/null
