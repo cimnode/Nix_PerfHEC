@@ -1,7 +1,7 @@
 # Nix_PerfHEC
 Send basic performance metrics to a Splunk metrics index. And view in an Splunk app.
 
-'ansible' folder contains installation routines.
+'ansible' folder contains installation routines.  
 'PerfHEC' is an app that can be loaded on your search head.
   
 Variables must be set in the group_vars/all.yml file.  
