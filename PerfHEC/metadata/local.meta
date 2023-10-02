@@ -1,0 +1,59 @@
+[app/ui]
+version = 9.1.1
+modtime = 1696208490.761634000
+
+[app/launcher]
+version = 9.1.1
+modtime = 1696208490.766711000
+
+[app/package/check_for_updates]
+version = 9.1.1
+modtime = 1696208490.782172000
+
+[savedsearches/Rebuild%20Nix_PerfHEC%20Lookup]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = nobody
+version = 9.1.1
+modtime = 1696210840.824079000
+
+[lookups/nix_systems.csv]
+access = read : [ * ], write : [ admin ]
+export = system
+owner = admin
+version = 9.1.1
+modtime = 1696208684.931177000
+
+[views/System_Load]
+access = read : [ * ], write : [ admin ]
+export = system
+owner = nobody
+version = 9.1.1
+modtime = 1696210840.828380000
+
+[transforms/nix_systems]
+access = read : [ * ], write : [ admin ]
+export = system
+owner = nobody
+version = 9.1.1
+modtime = 1696210840.920145000
+
+[macros/PerfHEC_metrics]
+access = read : [ * ], write : [ admin ]
+export = system
+owner = nobody
+version = 9.1.1
+modtime = 1696210840.794462000
+
+[macros/PerfHEC_systems]
+access = read : [ * ], write : [ admin ]
+export = system
+owner = nobody
+version = 9.1.1
+modtime = 1696210840.834368000
+
+[nav/default]
+export = none
+owner = nobody
+version = 9.1.1
+modtime = 1696210840.804459000
